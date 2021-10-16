@@ -8,5 +8,6 @@ Rails.application.routes.draw do
       
       post "/users", to: "v1/users#create" #for debugging purposes
       get  "/users", to: "v1/users#index"
+      get  "/users/:id", to: "v1/users#show"
   end
 end

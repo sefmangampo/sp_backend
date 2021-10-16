@@ -1,5 +1,6 @@
 class Api::V1::UsersController < ApplicationController
 
+    before_action :set_record, only: [:show]
     before_action :authorized, only: [:get_user] #from application controller, token verification
 
     def index
@@ -45,7 +46,15 @@ class Api::V1::UsersController < ApplicationController
         render json: {first_name: @user.first_name, last_name: @user.last_name, email: @user.email}
     end
 
+    def show
+        render json: @user
+    end
+
     private
+
+    def set_record
+        @user =  User.find(params[:id])
+      end
 
     def user_params
         params.require(:user).permit(:username, :password, :password_confirmation, :email, :first_name, :last_name)

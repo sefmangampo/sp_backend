@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: backend_exam_production
-  username: backend_exam
-  password: <%= ENV['BACKEND_EXAM_DATABASE_PASSWORD'] %>
+  database:  <%= ENV['DB'] %>
