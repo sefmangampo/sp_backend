@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       post "/authenticate", to: "v1/users#login"
       post "/authorize", to: "v1/users#get_user"
       
-      post "/user", to: "v1/users#create" #for debugging purposes
+      post "/users", to: "v1/users#create" #for debugging purposes
+      get  "/users", to: "v1/users#index"
   end
 end

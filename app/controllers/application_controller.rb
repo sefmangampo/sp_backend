@@ -16,11 +16,6 @@ class ApplicationController < ActionController::API
         time = ENV['JWT_EXPIRATION_IN_MINUTES']
         exp_time = Time.now.to_i + (time.to_i  * 60)
         
-        p "--------------------------"
-        p "jwt expration time: #{time}"
-        p "exp_time: #{exp_time}"
-        p "--------------------------"
-        
         exp_time
     end
 
